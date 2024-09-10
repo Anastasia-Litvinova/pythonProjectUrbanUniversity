@@ -1,0 +1,31 @@
+def count_calls():
+    global calls
+    calls += 1
+    return calls
+
+
+def string_info(string):
+    global calls
+    rezult_string_info = (len(string), string.upper(), string.lower())
+    print(rezult_string_info)
+    count_calls()
+
+
+def is_contains(string, list_to_search):
+    count = 0
+    for i in list_to_search:
+        if string.upper() == i.upper():
+            count += 1
+    if count > 0:
+        print(True)
+    else:
+        print(False)
+    count_calls()
+
+
+calls = 0
+string_info(input())
+string_info(input())
+is_contains(input(), input().split())
+is_contains(input(), input().split())
+print(calls)
