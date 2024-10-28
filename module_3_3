@@ -1,0 +1,20 @@
+def print_params(a=1, b='строка', c=True):
+    print(a, b, c)
+
+
+print_params(2, 'строка', True)  # меняется значение параментра а, остальные по умолчанию
+print_params()  # вызов функции без аргументов выводит параметры по умолчанию
+# print_params(5, 'string', False, 20)  # ошибка, передано больше параментров, чем объявлено в функции
+print_params(2, 35)  # значения первых 2 параметров заменены, 3 по умолчанию
+print_params(b=25)  # замена значения параметра b
+print_params(c=[1, 2, 3])  # замена значения параметра c
+
+
+values_list = [45, 'Hello', [1, 4, 6]]
+values_dict = {'a': 54, 'b': 'python', 'c': True}
+
+print_params(*values_list)
+print_params(**values_dict)
+
+values_list_2 = ['Hello', 4]
+print_params(*values_list_2, 42)
